@@ -1,0 +1,104 @@
+\documentclass[english]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+\usepackage{esint}
+\usepackage{babel}
+\begin{document}
+
+\section{Counter-Streaming Velocity Profile Initial Conditions}
+
+In a 3+1/ADM split, the metric is written as
+\begin{equation}
+g_{\mu\nu}=\left(\begin{array}{cc}
+-\alpha^{2}+\gamma_{kl}\beta^{k}\beta^{l} & \gamma_{ik}\beta^{k}\\
+\gamma_{jk}\beta^{k} & \gamma_{ij}
+\end{array}\right)
+\end{equation}
+and
+\begin{equation}
+g^{\mu\nu}=\left(\begin{array}{cc}
+-\alpha^{-2} & \alpha^{-2}\beta^{i}\\
+\alpha^{-2}\beta^{j} & \gamma^{ij}-\alpha^{-2}\beta^{i}\beta^{j}
+\end{array}\right)\,.
+\end{equation}
+
+
+\subsection{The Constraint Equations}
+
+On the initial surface, the Hamiltonian and Momentum constraints must
+be satisfied. In terms of ADM variables, these are respectively given
+by
+\begin{eqnarray}
+^{(3)}R+K^{2}-K_{ij}K^{ij} & = & 16\pi\rho\\
+D_{j}(K^{ij}-\gamma^{ij}K) & = & S^{i}
+\end{eqnarray}
+For a pressureless, perfect fluid with rest-density $\rho_{0}$ and
+some non-zero velocity $U_{\mu}$, the stress-energy tensor is 
+\begin{equation}
+T_{\mu\nu}=\rho_{0}U_{\mu}U_{\nu}\,.
+\end{equation}
+The covariant source terms for the $3+1$ momentum constraint equations
+are then 
+\begin{eqnarray}
+S^{i} & = & -\gamma^{ij}n^{\mu}T_{j\mu}\\
+ & = & \alpha\rho_{0}\gamma^{ij}U_{j}U^{t}\,,
+\end{eqnarray}
+and the Hamiltonian constraint source density is 
+\begin{eqnarray}
+\rho & = & n_{\mu}n_{\nu}T^{\mu\nu}\\
+ & = & \alpha^{2}\rho_{0}(U^{t})^{2}\,,
+\end{eqnarray}
+given the normal to the spatial slices is $n^{\mu}=\frac{1}{\alpha}(1,-\beta^{i})$
+or $n_{\mu}=(-\alpha,0)$. 
+
+
+\subsection{Initial Conditions}
+
+We can attempt to come up with a solution to these equations given
+an initally flat metric, with $\gamma_{ij}=\delta_{ij}$, and for
+constant trace of the extrinsic curvature $K$. (A variable conformal
+factor could be used for the 3-metric, but for simplicity this is
+taken to be unity on the initial surface.) To obtain a solution to
+the momentum constraint, a traceless-type decomposition can be performed,
+where the extrinsic curvature $K_{ij}$ is written as a trace-free
+part $A_{ij}$ (so that $\gamma_{ij}A^{ij}=0$) and traceful part,
+\begin{equation}
+K_{ij}=A_{ij}+\frac{1}{3}\gamma_{ij}K\,.
+\end{equation}
+In terms of these variables and for the choice of metric variables
+so far, the momentum constraint equation reduces to
+\begin{equation}
+\partial_{j}A^{ij}=S^{i}\,.
+\end{equation}
+As a simple example, a single component source $S^{i}\sim(S^{x}(y),0,0)$,
+which happens when $U_{j}=(U_{x}(y),0,0)$, results in only a single
+non-zero constraint equation, 
+\begin{eqnarray}
+\partial_{j}A^{xj} & = & S^{x}(y)\,.
+\end{eqnarray}
+The most straightforward solution to this is $A^{xy}=A^{yx}=\int dyS^{x}(y)$
+with all other components of $A^{ij}$ zero. In terms of $A_{ij}$,
+the Hamiltonian constraint is 
+\begin{eqnarray}
+\frac{2}{3}K^{2}-A_{ij}A^{ij} & = & 16\pi\rho\,,
+\end{eqnarray}
+so $\rho$ can be determined algebraically. The primitive fluid variables
+$\rho_{0}$ and $U_{x}$ can then be solved for,
+\begin{eqnarray}
+U_{x} & = & \frac{Q}{(1-Q)},\,\,{\rm with}\\
+Q & = & \left[\frac{16\pi S^{x}}{\left(\frac{2}{3}K^{2}-\left[\int dyS^{x}(y)\right]^{2}\right)}\right]^{2}
+\end{eqnarray}
+and
+\begin{equation}
+\rho_{0}=\frac{S^{x}}{U_{x}\sqrt{1+U_{x}^{2}}}\,.
+\end{equation}
+
+In summary, for this solution, the momentum variable $S^{x}(y)$ and a
+constant (homogeneous) value for metric variable $K$ are freely chosen.
+To mimic an expanding cosmology, $K$ should be negative and large enough
+that $\rho>0$. The 3-metric is initially $\gamma_{ij}=\delta_{ij}$, and
+$A_{ij}$ is $A^{xy}=A^{yx}=\int dyS^{x}(y)$. The source density $\rho$
+is determined algebraically from the Hamiltonian constraint, and fluid
+primitives from $S^{x}$ and $\rho$.
+\end{document}
